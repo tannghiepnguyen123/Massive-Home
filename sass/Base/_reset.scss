@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $black-0;
+    font-size: $size-3;
+    font-weight: $fw-1;
+    line-height: $lh-0;
+    text-rendering: optimizeLegibility;
+}
+
+::selection{
+    background-color: $yellow-0;
+    color: $white-0;
+}
+
+.clear{
+    clear: both;
+}

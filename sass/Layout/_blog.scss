@@ -1,0 +1,153 @@
+.blog {
+    .blog__content {
+        .blog__top {
+            text-align: center;
+            margin-bottom: $size-5 * 4;
+            h3 {
+                position: relative;
+                margin-bottom: $size-4;
+                padding-bottom: $size-2;
+                text-transform: uppercase;
+                @include textStyle($black-1, $size-5 - 1, $fw-4);
+                letter-spacing: $size-0 + 2px;
+                line-height: $lh-0;
+                &::after {
+                    position: absolute;
+                    bottom: -2px;
+                    left: 50%;
+                    width: $size-3 * 4;
+                    height: $size-0 + 2px;
+                    margin-left: -31px;
+                    content: "";
+                    background: $gray-1;
+                }
+            }
+            p {
+                display: inline-block;
+                width: 60%;
+                margin: 0 auto;
+                color: $gray-0;
+                line-height: $size-5;
+            }
+        }
+        .blog__bot {
+            .blog__bot__left {
+                padding: 0 $size-6;
+                .blog__img {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                    .blog__caption {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: $size-2;
+                        color: $white-0;
+                        background-color: $black-5;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            .blog__bot__right {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 $size-6;
+                .blog__info {
+                    ul {
+                        padding: 0;
+                        margin-bottom: $size-2;
+                        li {
+                            list-style: none;
+                            display: inline-block;
+                            margin-right: $size-2;
+                            a {
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                @include textStyle($gray-7, $size-2 + 2, $fw-1);
+                                letter-spacing: $size-0 + 1px;
+                                transition: all 0.5s;
+                                &:hover {
+                                    color: $yellow-0;
+                                }
+                            }
+                        }
+                    }
+                    h4 {
+                        a {
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            @include textStyle($black-2, $size-4 - 2, $fw-4);
+                            line-height: $lh-0;
+                            letter-spacing: $size-0 + 1px;
+                            transition: all 0.5s;
+                            &:hover {
+                                color: $yellow-0;
+                            }
+                        }
+                    }
+                    .blog__date {
+                        margin-bottom: $size-5;
+                        a {
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            letter-spacing: $size-0 + 2px;
+                            transition: all 0.5s;
+                            &:hover {
+                                color: $yellow-0;
+                            }
+                            @include textStyle($gray-7, $size-2 + 2, $fw-1);
+                        }
+                        @include textStyle($gray-7, $size-2 + 2, $fw-1);
+                        letter-spacing: $size-0 + 2px;
+                        text-transform: uppercase;
+                    }
+                    p {
+                        line-height: $size-6;
+                        margin: 0 0 $size-6;
+                        color: $gray-0;
+                    }
+                    .blog__button {
+                        text-transform: uppercase;
+                        color: $gray-8;
+                        letter-spacing: $size-0 + 1px;
+                        transition: all 0.5s;
+                        position: relative;
+                        text-decoration: none;
+                        i {
+                            position: absolute;
+                            top: $size-0 + 2px;
+                            margin-left: $size-2;
+                            font-weight: bold;
+                        }
+                        &:hover{
+                            color: $black-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("large"){
+    .blog{
+        .blog__content{
+            .blog__top{
+                h3{
+                    font-size: $size-4 - 2;
+                }
+            }
+            .blog__bot{
+                .blog__bot__right{
+                    .blog__info{
+                        padding: $size-6 0;
+                    }
+                }
+            }
+        }
+    }
+}

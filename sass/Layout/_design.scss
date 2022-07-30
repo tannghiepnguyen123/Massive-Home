@@ -1,0 +1,99 @@
+.design {
+    .design__content {
+        .design__title {
+            margin-bottom: 130px;
+            text-align: center;
+            h3 {
+                @include textStyle($black-1, $size-5 - 1, $fw-4);
+                letter-spacing: $size-0 + 2px;
+                margin-bottom: $size-4;
+                padding-bottom: $size-2;
+                text-transform: uppercase;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -2px;
+                    left: 50%;
+                    width: $size-3 * 4;
+                    height: $size-0 + 2px;
+                    margin-left: -31px;
+                    background: $gray-1;
+                }
+            }
+            p {
+                display: inline-block;
+                width: 60%;
+                margin: 0 auto;
+                color: $gray-0;
+                line-height: $size-5;
+            }
+        }
+        .design__card {
+            .design__col{
+                padding: 0 $size-6;
+                transition: all 0.5s;
+                .design__item {
+                    position: relative;
+                    padding: $size-6;
+                    border: 1px solid $white-1;
+                    border-radius: $size-1 - 1;
+                    .design__icon {
+                        position: absolute;
+                        top: -30px;
+                        left: 30px;
+                        width: 60px;
+                        height: 60px;
+                        text-align: center;
+                        border-radius: $size-1 - 1;
+                        background-color: $black-2;
+                        box-shadow: 0 0 0 $size-2 $white-0;
+                        line-height: $size-3 * 4;
+                        padding-bottom: $size-6;
+                        transition: all 0.5s;
+                        i{
+                            color: $white-0;
+                            font-size: $size-6;
+                            line-height: $size-3 * 4;
+                        }
+                    }
+                    h4{
+                        @include textStyle($black-1, $size-3 + 3, $fw-4);
+                        margin-bottom: $size-4;
+                        margin-top: $size-6;
+                        letter-spacing: $size-0 + 1;
+                        line-height: $lh-0;
+                    }
+                    p{
+                        color: $gray-0;
+                    }
+                    &:hover{
+                        .design__icon{
+                            background-color: $yellow-0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px){
+    .design__card{
+        .design__col{
+            margin-bottom: $size-5 * 2;
+        }
+    }
+}
+
+@include responsive("medium"){
+    .design{
+        .design__content{
+            .design__title{
+                h3{
+                    font-size: $size-4 - 2;
+                }
+            }
+        }
+    }
+}

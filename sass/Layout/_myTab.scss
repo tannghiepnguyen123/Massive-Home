@@ -1,0 +1,111 @@
+.myTab {
+    background-image: url("../img/pattern-2.png");
+    background-size: cover;
+    background-attachment: fixed;
+    .myTab__content {
+        nav {
+            .nav-tabs {
+                border-bottom: none;
+                .nav-link {
+                    border: none;
+                    color: $black-2;
+                    background: $black-6;
+                    border-radius: 0;
+                    transition: all 0.5s;
+                    position: relative;
+                    display: block;
+                    padding: $size-7 $size-7 * 2;
+                    &#nav-document-tab,
+                    &#nav-lightbulb-tab,
+                    &#nav-compass-tab,
+                    &#nav-telescope-tab {
+                        margin-left: $size-4;
+                    }
+                    i {
+                        @include textStyle($black-2, $size-7 + 1, $fw-4);
+                    }
+                    &::after {
+                        transition: all 0.5s;
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        margin-left: -10px;
+                        content: "";
+                        opacity: 0;
+                        border-width: $size-2 $size-2 $size-0 $size-2;
+                        border-style: solid;
+                        border-color: $white-0 transparent transparent transparent;
+                    }
+                    &:hover,
+                    &.active {
+                        background-color: $white-0;
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .tab-content {
+            .myTab__slide {
+                padding: $size-6 0;
+                .myTab__heading {
+                    margin-bottom: $size-5 * 2;
+                    span {
+                        text-transform: uppercase;
+                        letter-spacing: $size-0 + 2px;
+                        @include textStyle($gray-0, $size-3 - 1, $fw-4);
+                        line-height: $size-6;
+                    }
+                    h2 {
+                        margin-bottom: 0;
+                        text-transform: uppercase;
+                        letter-spacing: $size-0 + 2px;
+                        line-height: $lh-0;
+                        @include textStyle($black-1, $size-6, $fw-4);
+                    }
+                }
+                .myTab__info {
+                    p {
+                        line-height: $size-6;
+                        font-weight: $fw-4;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("medium") {
+    .myTab {
+        .myTab__content {
+            nav {
+                .nav-tabs {
+                    .nav-link {
+                        margin-bottom: $size-2;
+                        text-align: center;
+                        width: 100%;
+                        &#nav-document-tab,
+                        &#nav-lightbulb-tab,
+                        &#nav-compass-tab,
+                        &#nav-telescope-tab {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+            .tab-content{
+                .myTab__slide{
+                    .myTab__heading{
+                        h2{
+                            font-size: $size-4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

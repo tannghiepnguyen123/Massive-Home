@@ -1,0 +1,62 @@
+.stacs{
+    background-color: $black-7;
+    .stacs__content{
+        .stacs__slide{
+            padding: 0 $size-6;
+            .stacs__info{
+                text-align: center;
+                .stacs__number{
+                    margin-bottom: $size-2;
+                    i{
+                        padding-right: $size-2;
+                        display: inline-block;
+                        margin-bottom: 0;
+                        color: $white-0;
+                        font-size: $size-7 + 1;
+                    }
+                    span{
+                        display: inline-block;
+                        margin-bottom: 0;   
+                        letter-spacing: $size-0 + 2px;
+                        line-height: $lh-0;
+                        @include textStyle($white-0, $size-7 + 1, $fw-4);
+                    }
+                }
+                .stacs__title{
+                    p{
+                        margin-bottom: 0;
+                        letter-spacing: $size-0 + 1px;
+                        text-transform: uppercase;
+                        color: $white-0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("medium"){
+    .stacs{
+        .stacs__content{
+            .stacs__slide{
+                .stacs__info{
+                    .stacs__number{
+                        span{
+                            font-size: $size-5 + 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px){
+    .stacs{
+        .stacs__content{
+            .stacs__slide{
+                padding: $size-6 0;
+            }
+        }
+    }
+}

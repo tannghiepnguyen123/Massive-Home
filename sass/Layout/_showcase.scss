@@ -1,0 +1,249 @@
+.showcase {
+    padding-top: $size-5 * 4;
+    .showcase__content {
+        .showcase__top {
+            margin-bottom: $size-2 * 7;
+            text-align: center;
+            h3 {
+                position: relative;
+                margin-bottom: $size-4;
+                padding-bottom: $size-2;
+                letter-spacing: $size-0 + 2px;
+                text-transform: uppercase;
+                @include textStyle($black-1, $size-5 - 1, $fw-4);
+                line-height: $lh-0;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -2px;
+                    left: 50%;
+                    width: $size-3 * 4;
+                    height: $size-0 + 2px;
+                    margin-left: -31px;
+                    background: $gray-1;
+                }
+            }
+            p {
+                display: inline-block;
+                width: 60%;
+                margin: 0 auto;
+                color: $gray-0;
+                line-height: $size-5;
+            }
+        }
+        .showcase__bot {
+            .showcase__nav {
+                display: flex;
+                justify-content: center;
+                .nav {
+                    border-bottom: none;
+                    a {
+                        margin: 0 $size-3;
+                        border: none;
+                        transition: all 0.5s;
+                        @include textStyle($gray-5, $size-3 - 1, $fw-1);
+                        letter-spacing: $size-1 - 2;
+                        text-transform: uppercase;
+                        padding: 0;
+                        &:hover {
+                            color: $black-2;
+                        }
+                        &.active {
+                            color: $black-2;
+                        }
+                    }
+                }
+            }
+            .showcase-tab-content {
+                margin-top: $size-2 * 5;
+                .tab-pane {
+                    .showcase__img {
+                        position: relative;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .showcase__overlay {
+                        width: 100%;
+                        text-align: center;
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        top: $size-0;
+                        right: $size-0;
+                        bottom: $size-0;
+                        left: $size-0;
+                        margin: $size-0;
+                        transition: all 0.5s;
+                        opacity: 0;
+                        border: $size-4 solid $black-3;
+                        background-color: $white-2;
+                        &:hover {
+                            opacity: 1;
+                            i {
+                                animation-name: fadeDown__begin;
+                                animation-duration: 0.3s;
+                                animation-fill-mode: forwards;
+                            }
+                            .showcase__description {
+                                animation-name: fadeUp__begin;
+                                animation-duration: 0.3s;
+                                animation-fill-mode: forwards;
+                            }
+                        }
+                        i {
+                            animation-name: fadeDown__end;
+                            animation-duration: 0.3s;
+                            animation-fill-mode: forwards;
+                            display: inline-block;
+                            text-align: center;
+                            font-size: $size-7;
+                            margin-top: $size-2 * 7;
+                            cursor: pointer;
+                            color: black;
+                        }
+                        .showcase__description {
+                            animation-name: fadeUp__end;
+                            animation-duration: 0.3s;
+                            animation-fill-mode: forwards;
+                            text-align: center;
+                            margin-top: 25px;
+                            h4 {
+                                a {
+                                    cursor: pointer;
+                                    margin-bottom: $size-1;
+                                    letter-spacing: $size-1 - 1;
+                                    text-transform: uppercase;
+                                    font-size: $size-3 - 1;
+                                    text-decoration: none;
+                                    transition: all 0.5s;
+                                    @include textStyle($black-2, $size-3 - 1, $fw-4);
+                                    &:hover {
+                                        color: $yellow-0;
+                                    }
+                                }
+                            }
+                            p {
+                                color: $gray-4;
+                                a {
+                                    text-decoration: none;
+                                    text-transform: uppercase;
+                                    letter-spacing: $size-1 - 2;
+                                    @include textStyle($gray-4, $size-2 + 2, $fw-4);
+                                    line-height: $size-6;
+                                    transition: all 0.5s;
+                                    &:hover {
+                                        color: $yellow-0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeDown__begin {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp__begin {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown__end {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes fadeUp__end {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+#exampleModal-1,
+#exampleModal-7,
+#exampleModal-3,
+#exampleModal-4,
+#exampleModal-8,
+#exampleModal-6 {
+    .modal-dialog {
+        .modal-content {
+            margin: 0 auto;
+            background-color: transparent;
+            border: none;
+            .modal-header {
+                border: none;
+                padding-bottom: 0;
+                button {
+                    color: $white-0;
+                }
+            }
+            .modal-body {
+                img {
+                    width: 100%;
+                }
+            }
+            .modal-footer {
+                justify-content: flex-start;
+                border: none;
+                p {
+                    color: $white-3;
+                    line-height: $size-4 - 2;
+                }
+            }
+        }
+    }
+}
+
+@include responsive("medium") {
+    .showcase {
+        .showcase__content {
+            .showcase__top {
+                h3 {
+                    font-size: $size-4 - 2;
+                }
+            }
+            .showcase__bot {
+                .showcase__nav {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .nav {
+                        a {
+                            padding: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
